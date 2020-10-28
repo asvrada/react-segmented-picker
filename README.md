@@ -1,6 +1,6 @@
 # react-segmented-picker
 
-[![Build Status](https://travis-ci.com/asvrada/react-segmented-picker.svg?branch=main)](https://travis-ci.com/asvrada/react-segmented-picker)
+[![Build Status](https://travis-ci.com/asvrada/react-segmented-picker.svg?branch=master)](https://travis-ci.com/asvrada/react-segmented-picker)
 
 An iOS style segmented picker for react web
 
