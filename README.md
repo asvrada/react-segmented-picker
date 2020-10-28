@@ -25,7 +25,7 @@ yarn add react-segmented-picker
 ```js
 import React, { useState } from 'react';
 
-import SegmentedPicker from './components/SegmentedPicker';
+import SegmentedPicker from 'react-segmented-picker';
 
 // Demo App
 function App() {
