@@ -14,16 +14,14 @@
     "dist/*"
   ],
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.0.1",
+    "react-dom": "^16.0.1",
     "react-scripts": "4.0.0",
-    "styled-components": "^5.2.0",
-    "web-vitals": "^0.2.4"
+    "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.0.1",
+    "react-dom": "^16.0.1",
     "styled-components": "^5.2.0"
   },
   "keywords": [
