@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
-import './App.css';
-
 import SegmentedPicker from './components/SegmentedPicker';
 
-// Demo page
+// Demo App
 function App() {
   const [selection, setSelection] = useState(0);
   const options = ['Apple', 'Orange', 'Pear', 'Watermelon'];

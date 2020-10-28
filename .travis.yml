@@ -8,8 +8,6 @@ git:
 
 cache: yarn
 
-script: yarn run build
-
 jobs:
   include:
     # Define the release stage that runs semantic-release

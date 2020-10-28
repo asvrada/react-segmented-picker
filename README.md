@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# react-segmented-picker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.com/asvrada/react-segmented-picker.svg?branch=main)](https://travis-ci.com/asvrada/react-segmented-picker)
 
-## Available Scripts
+An iOS style segmented picker for react web
 
-In the project directory, you can run:
+[Demo (the bar next to "All Posts")](https://asvrada.github.io/blog/posts/)
 
-### `yarn start`
+## Install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```shell script
+npm i react styled-components --save-dev
+npm i react-segmented-picker
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+or
 
-### `yarn test`
+```shell script
+yarn add react styled-components -D
+yarn add react-segmented-picker
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `yarn build`
+```js
+import React, { useState } from 'react';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+import SegmentedPicker from './components/SegmentedPicker';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// Demo App
+function App() {
+  const [selection, setSelection] = useState(0);
+  const options = ['Apple', 'Orange', 'Pear', 'Watermelon'];
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <div className="App">
+      <p>You selected</p>
+      <p>#{selection}: {options[selection]}</p>
 
-### `yarn eject`
+      <SegmentedPicker
+        options={options}
+        selection={selection}
+        onSelectionChange={(newSelection) => {
+          setSelection(newSelection);
+        }}
+      />
+    </div>
+  );
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default App;
+```
