@@ -6,35 +6,41 @@ import '../styles/segmented-picker.scss';
 const SPACE = ' ';
 
 const DivSegmentedPicker = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  border-radius: 7px;
-  background-color: rgb(238, 238, 239);
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 7px;
+    background-color: rgb(238, 238, 239);
+    overflow: hidden;
 `;
 
 const DivSeparator = styled.div`
-  display: inline-block;
-  opacity: ${props => props.opacity};
-  transition: opacity 0.2s ease-in-out;
-  background-color: rgb(212, 212, 215);
-  width: 1px;
-  height: 1em;
+    display: inline-block;
+    opacity: ${props => props.opacity};
+    transition: opacity 0.2s ease-in-out;
+    background-color: rgb(212, 212, 215);
+    width: 1px;
+    height: 1em;
 `;
 
 const DivOption = styled.div`
-  display: inline-block;
-  text-align: center;
-  flex-grow: 1;
-  padding: 2px 1em;
-  border-radius: 5px;
-  cursor: pointer;
-  user-select: none;
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 2px 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
 `;
 
 // options is a list of string
-const SegmentedPicker = ({ options, selection, onSelectionChange, className }) => {
+const SegmentedPicker = ({
+  options,
+  selection,
+  onSelectionChange,
+  className,
+}) => {
 
   const componentOptions = options.map((each, index) => {
     // don't show if current or previous index is selected
@@ -47,10 +53,11 @@ const SegmentedPicker = ({ options, selection, onSelectionChange, className }) =
         {/* Hide the separator for item at index 0 */}
         {index !== 0 && <DivSeparator opacity={opacity}>{SPACE}</DivSeparator>}
 
-        <DivOption className={((index === selection) ? 'react-segmented-picker-selected-option' : '')}
-             onClick={() => {
-               onSelectionChange(index);
-             }}
+        <DivOption
+          className={((index === selection) ? 'rsp-selected-option' : null)}
+          onClick={() => {
+            onSelectionChange(index);
+          }}
         >
           {each}
         </DivOption>
