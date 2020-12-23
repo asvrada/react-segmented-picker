@@ -1,3 +1,3 @@
-import SegmentedPicker from './components/SegmentedPicker.js';
+import SegmentedPicker from './components/SegmentedPicker.tsx';
 
 export default SegmentedPicker;
