@@ -14,7 +14,11 @@ const DivSegmentedPicker = styled.div`
     overflow: hidden;
 `;
 
-const DivSeparator = styled.div`
+interface DivSeparatorProps {
+  readonly opacity: number;
+}
+
+const DivSeparator = styled.div<DivSeparatorProps>`
     display: inline-block;
     opacity: ${props => props.opacity};
     transition: opacity 0.2s ease-in-out;
@@ -23,7 +27,11 @@ const DivSeparator = styled.div`
     height: 1em;
 `;
 
-const DivOption = styled.div`
+interface DivOptionProps {
+  className?: string;
+}
+
+const DivOption = styled.div<DivOptionProps>`
     display: inline-block;
     text-align: center;
     flex-grow: 1;
@@ -34,15 +42,22 @@ const DivOption = styled.div`
     user-select: none;
 `;
 
+interface SegmentedPickerProp {
+  options: any[];
+  selection: number;
+  onSelectionChange: (newSelection: number) => void;
+  className?: string;
+}
+
 // options is a list of string
 const SegmentedPicker = ({
-  options,
-  selection,
-  onSelectionChange,
-  className,
-}) => {
+                           options,
+                           selection,
+                           onSelectionChange,
+                           className,
+                         }: SegmentedPickerProp) => {
 
-  const componentOptions = options.map((each, index) => {
+  const componentOptions = options.map((each: any, index: number) => {
     // don't show if current or previous index is selected
     const showSeparator = !(index === selection || (index - 1) === selection);
 
@@ -54,7 +69,7 @@ const SegmentedPicker = ({
         {index !== 0 && <DivSeparator opacity={opacity}>{SPACE}</DivSeparator>}
 
         <DivOption
-          className={((index === selection) ? 'rsp-selected-option' : null)}
+          className={((index === selection) ? 'rsp-selected-option' : undefined)}
           onClick={() => {
             onSelectionChange(index);
           }}
