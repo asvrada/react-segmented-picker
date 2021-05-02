@@ -36,7 +36,7 @@ const DivOption = styled.div<DivOptionProps>`
     text-align: center;
     flex-grow: 1;
     flex-basis: 0;
-    padding: 2px 1em;
+    padding: 2px 2px; 
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
