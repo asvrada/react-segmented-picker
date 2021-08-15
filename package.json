@@ -5,21 +5,15 @@
   "homepage": "https://github.com/asvrada/react-segmented-picker",
   "private": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rollup -c"
+    "build": "rm -rf dist && rollup -c"
   },
   "main": "dist/react-segmented-picker.esm.js",
   "module": "dist/react-segmented-picker.esm.js",
-  "types": "./dist/components/SegmentedPicker.d.ts",
+  "types": "dist/components/SegmentedPicker.d.ts",
   "files": [
     "dist/*"
   ],
-  "dependencies": {
-    "react": "^16.0.1",
-    "react-dom": "^16.0.1",
-    "react-scripts": "4.0.1",
-    "styled-components": "^5.2.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.0.1",
     "react-dom": "^16.0.1",
@@ -54,9 +48,8 @@
     ]
   },
   "devDependencies": {
-    "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -67,6 +60,7 @@
     "node-sass": "^4.14.1",
     "rollup": "^2.32.1",
     "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
