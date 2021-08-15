@@ -1,31 +1,25 @@
-import buble from '@rollup/plugin-buble';
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import filesize from 'rollup-plugin-filesize';
 import postcss from 'rollup-plugin-postcss';
-import { terser } from 'rollup-plugin-terser';
+import {terser} from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
 import pkg from './package.json';
 
 // only generate ES module build
 export default {
-  input: './src/install.js',
-  external: ['react', 'react/jsx-runtime', 'react-dom', 'styled-components'],
+  input: './src/index.js',
   output: [
-    { file: pkg.module, format: 'es' },
+    {file: pkg.module, format: 'es', sourcemap: true},
   ],
   plugins: [
-    typescript(/*{ plugin options }*/),
-    buble({
-      exclude: '**/*.scss',
-      transforms: {
-        dangerousTaggedTemplateString: true,
-      },
-    }),
-    postcss({
-      extract: false,
-      minimize: true,
-      use: ['sass'],
-    }),
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    typescript(),
+    postcss(),
     terser(),
     filesize(),
   ],
