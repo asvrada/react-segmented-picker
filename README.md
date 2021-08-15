@@ -4,7 +4,7 @@
 
 An iOS style segmented picker for react web
 
-[Demo (the bar next to "All Posts")](https://asvrada.github.io/blog/posts/)
+![](docs/demo.png)
 
 ## Install
 
