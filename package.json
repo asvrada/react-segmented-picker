@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c"
+    "build": "rm -rf dist && rollup -c"
   },
   "main": "dist/react-segmented-picker.esm.js",
   "module": "dist/react-segmented-picker.esm.js",
